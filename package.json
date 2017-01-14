@@ -1,0 +1,27 @@
+{
+  "name": "es6",
+  "version": "1.0.0",
+  "description": "ES6 examples",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/corporatepiyush/es6.git"
+  },
+  "author": "Piyush Katariya",
+  "license": "BSD 3",
+  "bugs": {
+    "url": "https://github.com/corporatepiyush/es6/issues"
+  },
+  "homepage": "https://github.com/corporatepiyush/es6#readme",
+  "devDependencies": {
+    "eslint": "^3.13.1",
+    "eslint-plugin-fp": "^2.3.0"
+  },
+  "dependencies": {
+    "axios": "0.15.3",
+    "js-csp": "0.9.0"
+  }
+}

@@ -1,0 +1,11 @@
+node_modules
+log
+npm-debug.log
+npm-debug.log.*
+.DS_Store
+test.js
+tags
+.idea/*
+*.iml
+!.eslintrc.js
+coverage
