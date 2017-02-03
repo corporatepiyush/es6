@@ -22,6 +22,9 @@
   },
   "dependencies": {
     "axios": "0.15.3",
-    "js-csp": "0.9.0"
+    "date-fp": "4.4.8",
+    "eslint": "3.14.1",
+    "js-csp": "0.9.0",
+    "ramda": "0.23.0"
   }
 }

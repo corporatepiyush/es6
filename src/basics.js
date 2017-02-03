@@ -20,7 +20,7 @@ const { first: f, last: l } = obj
 console.log('f=', f, 'l=', l) // f = 'Jane' l = 'Doe'
 
 const { first, last } = obj
-console.log('first=', f, 'last=', l) // first = 'Jane' last = 'Doe'
+console.log('first=', first, 'last=', last) // first = 'Jane' last = 'Doe'
 
 const [ x, ...y ] = 'abc'
 console.log('x=', x, 'y=', y) // x='a'; y=['b', 'c']
