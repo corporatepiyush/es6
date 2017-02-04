@@ -6,8 +6,8 @@ const date = new Date('2015-01-01 01:01:01.000');
 _.unixTime(new Date('2015-10-16T00:00:00+00:00'))  // 1444996800
 
 
-D.equals(date, new Date('2015-04-09')); // true
-D.equals(date, new Date('2014-01-01')); //false
+_.equals(date, new Date('2015-04-09')); // true
+_.equals(date, new Date('2014-01-01')); //false
 
 _.add('milliseconds', 1, date); // 2015-01-01 01:01:01.1
 _.add('seconds', 1, date); // 2015-01-01 01:01:02.0
