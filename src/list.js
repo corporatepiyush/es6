@@ -19,10 +19,7 @@ const printList = (cons) => JSON.stringify(cons, null, 2)
 //console.log(printList(list))
 
 const list = cons(1, cons(2, cons(3, cons(4, cons(5, Nil)))))
-//console.log("List:", printList(list)) // [1,2,3,4,5]
-
-
-
+// console.log("List:", printList(list)) // [1,2,3,4,5]
 
 
 
@@ -32,17 +29,17 @@ const list = cons(1, cons(2, cons(3, cons(4, cons(5, Nil)))))
 
 const head = ({ value }) => value
 
-//console.log("Head:", head(list)) // 1
-//console.log("head empty:", head({}))
+// console.log("Head:", head(list)) // 1
+// console.log("head empty:", head({}))
 
 const tail = ({ _, cons }) => cons
 
-//console.log("Tail:", tail(list)) // [2,3,4,5]
+// console.log("Tail:", tail(list)) // [2,3,4,5]
 
 // come back here after recursion example
 const init = ({ value, cons:_cons}) => _cons == Nil ? Nil : cons(value, init(_cons))
 
-// console.log("Init:", init(list)) // [1,2,3,4]
+// console.log("Init:", printList(init(list))) // [1,2,3,4]
 
 const last = ({value, cons}) => cons == Nil ? value : last(cons)
 
@@ -60,9 +57,11 @@ const length = ({value, cons}) =>
       ( cons !== Nil ? 1 + length(cons) : 1 ) :
       0
 
-//console.log("Length of cons():", length(cons())) // 0
-//console.log("Length of cons(1, null):", length(cons(1, Nil))) // 1
-//console.log("Length of List:", length(list)) // 5
+
+
+// console.log("Length of cons():", length(cons())) // 0
+// console.log("Length of cons(1, null):", length(cons(1, Nil))) // 1
+// console.log("Length of List:", length(list)) // 5
 
 
 const range = (start, end, step = 1) =>
@@ -72,6 +71,7 @@ const range = (start, end, step = 1) =>
 
 
 
+//console.log(range(1, 8000))
 
 // console.log("Range(1, 10, 2):", printList(range(1, 10, 2))) // [10, 9, 8]
 // console.log("Range(1, 3):", range(1, 3)) // [1, 2, 3]
@@ -86,9 +86,9 @@ const equals = (cons1, cons2, predicate = (value1, value2) => value1 === value2)
         equals(tail(cons1), tail(cons2), predicate) :
         true
 
-//console.log("Equals should be false : ", equals(range(1, 10), range(1, 5)))
-//console.log("Equals should be true: ", equals(range(1, 10), range(1, 10)))
-
+// console.log("Equals should be false : ", equals(range(1, 10), range(1, 5)))
+// console.log("Equals should be true: ", equals(range(1, 10), range(1, 10)))
+//  does not work with negative ranges
 
 
 

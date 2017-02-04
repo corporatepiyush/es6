@@ -139,17 +139,6 @@ const transduce = _.transduce(
 // console.log('transduce=', transduce)
 
 
-// evolve you object to new realities
-
-const tomato = {firstName: '  Tomato ', data: {elapsed: 100, remaining: 1400}, id: 123}
-const transformations = {
-    firstName: _.trim,
-    lastName: _.trim, // Will not get invoked.
-    data: {elapsed: _.add(1), remaining: _.add(-1)}
-}
-// console.log("evolve=", _.evolve(transformations, tomato)) //=> {firstName: 'Tomato', data: {elapsed: 101, remaining: 1399}, id:123}
-
-
 /// objects
 
 
@@ -163,11 +152,11 @@ const transformations = {
         nationality : 'Spanish',
         married : true
     }
-    console.log("object keys =", _.keys(obj))
-    console.log("object values =", _.values(obj))
-    console.log("object add attribute =", _.assoc('height', 1.68, obj))
-    console.log("object remove attribute =", _.dissoc('nationality', obj))
-    console.log("object check attribute =", _.has('married', obj))
+    // console.log("object keys =", _.keys(obj))
+    // console.log("object values =", _.values(obj))
+    // console.log("object add attribute =", _.assoc('height', 1.68, obj))
+    // console.log("object remove attribute =", _.dissoc('nationality', obj))
+    // console.log("object check attribute =", _.has('married', obj))
 
 }
 
@@ -185,9 +174,10 @@ const transformations = {
 
     }
 
-    function transform(input) {
+    const transform = (input) => _.fromPairs(
+        _.map(([key, value]) => [`-${key}-`, value],
+            _.toPairs(input)))
 
-    }
 
     // console.log("transform=", transform(input)) // output
 }
@@ -210,11 +200,29 @@ const transformations = {
     }
 
     function transform(input) {
-
+        const pairs = _.toPairs(input)
+        const filteredPairs = _.filter(_.compose(_.is(Number), _.view(_.lensIndex(1))), pairs)
+        return _.fromPairs(filteredPairs)
     }
 
-    // console.log("transform=", transform(input)) // output
+    console.log("transform=", transform(input)) // output
 }
+
+
+{
+
+    // evolve you object to new realities
+
+    const tomato = {firstName: '  Tomato ', data: {elapsed: 100, remaining: 1400}, id: 123}
+    const transformations = {
+        firstName: _.trim,
+        lastName: _.trim, // Will not get invoked.
+        data: {elapsed: _.add(1), remaining: _.add(-1)}
+    }
+    // console.log("evolve=", _.evolve(transformations, tomato)) //=> {firstName: 'Tomato', data: {elapsed: 101, remaining: 1399}, id:123}
+
+}
+
 
 
 {

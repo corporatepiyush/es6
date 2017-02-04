@@ -85,4 +85,6 @@ const topData = _.compose(gloss, incomplete)
 
 // console.log("Completed task sort by date and group by user =", groupByUser(sortByDate(complete(tasks))))
 
-console.log("Active Tasks By User =", activeByUser(tasks))
+// console.log("Active Tasks By User =", activeByUser(tasks))
+
+// console.log("top data =", topData(tasks))
