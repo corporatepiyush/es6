@@ -10,7 +10,12 @@ console.log('scope=', scope) // scope= 100
     let scope = 50
     console.log('scope=', scope) // scope= 50
 }
-console.log(`scope= ${scope}`) // scope= 100
+let string = `
+scope= ${scope}
+second line
+third line
+`
+console.log(string) // scope= 100
 
 // --------------------------------------------------------
 
@@ -45,10 +50,38 @@ console.log('p=', p, 'q=', q) // p = 3; q = undefined
 const {foo: u=3, bar: v} = {}
 console.log('u=', u, 'v=', v) // u = 3; v = undefined
 
+
+function head([a, _]) {
+    return a
+}
+
+console.log("head=",head([1,2,3]))
+
+
+function tail([_, ...b]) {
+    return b
+}
+
+console.log("tail=",tail([1,2,3]))
+
+// function last([...b, c]) { //does not work on 6.x
+//     return c
+// }
+//
+// console.log("last=",last([1,2,3]))
+
 // --------------------------------------------------------
 
 for(const num of [1, 2, 3]) {
     console.log(`num= ${num}`)
+}
+
+for(const char of "Red Panda") {
+    console.log(char)
+}
+
+for(const char in { a : 1, b : 2 }) {
+    console.log(char)
 }
 
 // --------------------------------------------------------

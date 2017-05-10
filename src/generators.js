@@ -18,7 +18,9 @@ function simpleGenerator() {
 
     function* bar(x) {
         var y = 2 * (yield(x + 1));
+        console.log("y=", y)
         var z = yield(y / 3);
+        console.log("z=", z)
         return (x + y + z);
     }
 
