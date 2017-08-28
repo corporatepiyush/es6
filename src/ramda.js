@@ -108,7 +108,7 @@ const odd_lazy = filter_lazy(isOdd, range_lazy(1, 10))
 
 const odd_squares_lazy = map_lazy(square,
     filter_lazy(isOdd,
-        range_lazy(1, 10)))
+        range_lazy(1, 7000)))
 
 // console.log('odd_squares_lazy=', [...odd_squares_lazy])
 
@@ -124,7 +124,7 @@ function sum_lazy(gen) {
 
 // console.log('sum_lazy=', sum_lazy(map_lazy(square,
 //     filter_lazy(isOdd,
-//         range_lazy(1, 10)))))
+//         range_lazy(1, 100)))))
 
 
 // Lazy evaluation with transducers
@@ -205,7 +205,7 @@ const transduce = _.transduce(
         return _.fromPairs(filteredPairs)
     }
 
-    console.log("transform=", transform(input)) // output
+    // console.log("transform=", transform(input)) // output
 }
 
 
@@ -219,7 +219,7 @@ const transduce = _.transduce(
         lastName: _.trim, // Will not get invoked.
         data: {elapsed: _.add(1), remaining: _.add(-1)}
     }
-    // console.log("evolve=", _.evolve(transformations, tomato)) //=> {firstName: 'Tomato', data: {elapsed: 101, remaining: 1399}, id:123}
+    // console.log("evolve=", _.evolve(transform ations, tomato)) //=> {firstName: 'Tomato', data: {elapsed: 101, remaining: 1399}, id:123}
 
 }
 
